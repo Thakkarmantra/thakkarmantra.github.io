@@ -165,14 +165,17 @@
     <source src="soft_piano.mp3" type="audio/mpeg">
   </audio>
 
-  <script>
+  <script >
     // 🎈 Classy Gold Balloons
     for (let i = 0; i < 8; i++) {
+      console.log(i);
       const b = document.createElement("div");
+      // debugger;
       b.classList.add("balloon");
+      const colorArray = ["red", "blue"]
       b.style.left = Math.random() * 100 + "vw";
-      b.style.animationDuration = (8 + Math.random() * 4) + "s";
-      b.style.background = radial-gradient(circle at 30% 30%, rgba(255,215,0,0.9), rgba(212,175,55,0.7));
+      b.style.animationDuration =  (8 + Math.random() * 4) + "s";
+      b.style.background =  colorArray[0] //rgba(255,215,0,0.9);
       document.body.appendChild(b);
     }
 
@@ -182,7 +185,7 @@
       spark.classList.add("spark");
       spark.style.left = 45 + Math.random() * 10 + "%";
       spark.style.top = 65 + Math.random() * 10 + "%";
-      spark.style.background = hsl(${40 + Math.random() * 20},100%,70%);
+      spark.style.background = "red";
       document.body.appendChild(spark);
       setTimeout(() => spark.remove(), 1000);
     }, 200);
